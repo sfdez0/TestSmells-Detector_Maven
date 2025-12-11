@@ -36,4 +36,34 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
+  
+  <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.11.0</version>
+            <configuration>
+                <release>17</release>
+            </configuration>
+        </plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-plugin-plugin</artifactId>
+            <version>3.9.0</version> <configuration>
+                <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>default-descriptor</id>
+                    <phase>process-classes</phase>
+                    <goals>
+                        <goal>descriptor</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+  </build>
 </project>
